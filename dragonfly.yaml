@@ -1,0 +1,18 @@
+apiVersion: dragonflydb.io/v1alpha1
+kind: Dragonfly
+metadata:
+  name: dragonfly
+  namespace: dragonfly
+spec:
+  replicas: 1
+  authentication:
+    passwordFromSecret:
+      name: dragonfly-auth
+      key: password
+  resources:
+    requests:
+      cpu: 1
+      memory: 2Gi
+    limits:
+      cpu: 2
+      memory: 4Gi
