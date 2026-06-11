@@ -1,3 +1,5 @@
+<img src="img/logo.png" alt="Logo do Markdown" width="10%">
+
 # 🚀 Guia de Instalação e Configuração do Dragonfly no Kubernetes
 
 ## 📝 Sobre o Dragonfly
