@@ -58,6 +58,20 @@ spec:
     limits:
       cpu: 2
       memory: 4Gi
+# --- BLOCO DE CONFIGURAÇÃO DA PERSISTÊNCIA CASO NECESSÁRIO (Opcional bloco abaixo) ---
+  args:
+    - "--dir=/data"
+    - "--dbfilename=dump"
+  snapshot:
+    cron: "*/5 * * * *" # Roda o cron a cada 5 segundos para salvar a persistência
+    persistentVolumeClaimSpec:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 5Gi # Tamanho do PVC
+      storageClassName: standard
+
 ```
 
 ### 🚀 Implantação da Instância
